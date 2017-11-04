@@ -70,7 +70,7 @@ class DMX {
         static int noBlackout(){
             map <int, int> c; 
 
-            for(int i = 1; i<=512, i++){
+            for(int i = 1; i<=512; i++){
                 c.insert(pair <int, int> (i, 255)); 
             }
             sendChannel(c);
