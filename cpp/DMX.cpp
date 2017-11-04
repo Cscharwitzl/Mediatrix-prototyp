@@ -51,5 +51,5 @@ int main(int, char *[]){
     c.insert(pair <int, int> (6, 50)); 
     c.insert(pair <int, int> (7, 10));
 
-    DMX.sendChannel(c);
+    DMX::sendChannel(c);
 }
