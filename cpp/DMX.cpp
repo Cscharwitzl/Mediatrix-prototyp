@@ -11,7 +11,7 @@ using namespace std;
 class DMX {
 
     private:
-        unsigned int universe = 0; // universe to use for sending data
+        static unsigned int universe = 0; // universe to use for sending data
     
     public: 
         static int sendChannel(map<int,int> channels ){
