@@ -10,36 +10,62 @@
 using namespace std;
 class DMX {
 
-    public: static int sendChannel(map<int,int> channels ){
+    private:
         unsigned int universe = 0; // universe to use for sending data
-        ola::InitLogging(ola::OLA_LOG_WARN, ola::OLA_LOG_STDERR);
-        ola::DmxBuffer buffer; // A DmxBuffer to hold the data.
-        buffer.Blackout(); // Set all channels to 0
+    
+    public: 
+        static int sendChannel(map<int,int> channels ){
+            ola::InitLogging(ola::OLA_LOG_WARN, ola::OLA_LOG_STDERR);
+            ola::DmxBuffer buffer; // A DmxBuffer to hold the data.
+            buffer.Blackout(); // Set all channels to 0
 
-        
-        // Create a new client.
-         ola::client::StreamingClient ola_client(
-        (ola::client::StreamingClient::Options()));
-
-        // Setup the client, this connects to the server
-        if (!ola_client.Setup()) {
-            std::cerr << "Setup failed" << endl;
-            exit(1);
-        }
-
-        
-        for (auto const& x : channels)
-        {
             
-            buffer.SetChannel(x.first, x.second);
-        }
+            // Create a new client.
+            ola::client::StreamingClient ola_client(
+            (ola::client::StreamingClient::Options()));
+
+            // Setup the client, this connects to the server
+            if (!ola_client.Setup()) {
+                std::cerr << "Setup failed" << endl;
+                exit(1);
+            }
+
+            
+            for (auto const& x : channels)
+            {
+                
+                buffer.SetChannel(x.first, x.second);
+            }
+            
+            if (!ola_client.SendDmx(universe, buffer)) {
+                cout << "Send DMX failed" << endl;
+                exit(1);
+            }
         
-        if (!ola_client.SendDmx(universe, buffer)) {
-            cout << "Send DMX failed" << endl;
-            exit(1);
         }
-        
-    }
+
+        static int blackout(){
+            ola::InitLogging(ola::OLA_LOG_WARN, ola::OLA_LOG_STDERR);
+            ola::DmxBuffer buffer; // A DmxBuffer to hold the data.
+            buffer.Blackout(); // Set all channels to 0
+
+
+            // Create a new client.
+            ola::client::StreamingClient ola_client(
+                (ola::client::StreamingClient::Options()));
+    
+            // Setup the client, this connects to the server
+            if (!ola_client.Setup()) {
+                std::cerr << "Setup failed" << endl;
+                exit(1);
+            }
+
+
+            if (!ola_client.SendDmx(universe, buffer)) {
+                cout << "Send DMX failed" << endl;
+                exit(1);
+            }
+        }
 };
 
 int main(int, char *[]){
@@ -55,4 +81,6 @@ int main(int, char *[]){
     c.insert(pair <int, int> (7, 10));
 
     DMX::sendChannel(c);
+
+    DMX::blackout();
 }
