@@ -11,7 +11,7 @@ using namespace std;
 class DMX {
 
     private:
-        static const unsigned int universe = 0; // universe to use for sending data
+        static const unsigned int UNIVERSE = 0; // UNIVERSE to use for sending data
     
     public: 
         static int sendChannel(map<int,int> channels ){
@@ -37,7 +37,7 @@ class DMX {
                 buffer.SetChannel(x.first, x.second);
             }
             
-            if (!ola_client.SendDmx(universe, buffer)) {
+            if (!ola_client.SendDmx UNIVERSE, buffer)) {
                 cout << "Send DMX failed" << endl;
                 exit(1);
             }
@@ -61,10 +61,19 @@ class DMX {
             }
 
 
-            if (!ola_client.SendDmx(universe, buffer)) {
+            if (!ola_client.SendDmx UNIVERSE, buffer)) {
                 cout << "Send DMX failed" << endl;
                 exit(1);
             }
+        }
+
+        static int noBlackout(){
+            map <int, int> c; 
+
+            for(int i = 1; i<=512, i++){
+                c.insert(pair <int, int> (i, 255)); 
+            }
+            sendChannel(c);
         }
 };
 
@@ -83,4 +92,6 @@ int main(int, char *[]){
     DMX::sendChannel(c);
 
     DMX::blackout();
+
+    DMX::noBlackout();
 }
