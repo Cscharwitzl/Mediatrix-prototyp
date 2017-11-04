@@ -10,7 +10,7 @@
 using namespace std;
 class DMX {
 
-    int sendChannel(map<int,int> channels ){
+    static int sendChannel(map<int,int> channels ){
         unsigned int universe = 2; // universe to use for sending data
 
         ola::DmxBuffer buffer; // A DmxBuffer to hold the data.
@@ -51,5 +51,5 @@ int main(int, char *[]){
     c.insert(pair <int, int> (6, 50)); 
     c.insert(pair <int, int> (7, 10));
 
-    sendChannel(c);
+    DMX.sendChannel(c);
 }
