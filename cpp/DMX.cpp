@@ -37,7 +37,7 @@ class DMX {
                 buffer.SetChannel(x.first, x.second);
             }
             
-            if (!ola_client.SendDmx UNIVERSE, buffer)) {
+            if (!ola_client.SendDmx(UNIVERSE, buffer)) {
                 cout << "Send DMX failed" << endl;
                 exit(1);
             }
@@ -61,7 +61,7 @@ class DMX {
             }
 
 
-            if (!ola_client.SendDmx UNIVERSE, buffer)) {
+            if (!ola_client.SendDmx(UNIVERSE, buffer)) {
                 cout << "Send DMX failed" << endl;
                 exit(1);
             }
