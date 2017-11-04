@@ -6,4 +6,5 @@ Libaries:
 
 TODO's:
 * install php-dev
-* install php-CPP
+* install php-CPP http://www.php-cpp.com/
+* install Ratchet http://socketo.me/
