@@ -8,7 +8,21 @@
 #include <map>
 
 class DMX {
-    int sendChannel(map<int,int> channels){
+
+    int main(){
+        map <int, int> c;        // empty map container
+        
+        // insert elements in random order
+        c.insert(pair <int, int> (1, 40));
+        c.insert(pair <int, int> (2, 30));
+        c.insert(pair <int, int> (3, 60));
+        c.insert(pair <int, int> (4, 20));
+        c.insert(pair <int, int> (5, 50));
+        c.insert(pair <int, int> (6, 50)); 
+        c.insert(pair <int, int> (7, 10));
+    }
+
+    int sendChannel(channels map<int,int>){
         unsigned int universe = 2; // universe to use for sending data
 
         ola::DmxBuffer buffer; // A DmxBuffer to hold the data.
