@@ -23,7 +23,7 @@ class DMX {
         c.insert(pair <int, int> (7, 10));
     }
 
-    int sendChannel(channels map<int,int>){
+    int sendChannel(map<int,int> channels ){
         unsigned int universe = 2; // universe to use for sending data
 
         ola::DmxBuffer buffer; // A DmxBuffer to hold the data.
@@ -38,7 +38,7 @@ class DMX {
             exit(1);
         }
 
-        for (auto const& x : symbolTable)
+        for (auto const& x : channels)
         {
             
             buffer.SetChannel(x.first, x.second);
