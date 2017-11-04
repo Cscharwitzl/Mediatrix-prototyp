@@ -8,7 +8,7 @@
 #include <map>
 
 class DMX {
-    int sendChannel(channels map<int,int>){
+    int sendChannel(map<int,int> channels){
         unsigned int universe = 2; // universe to use for sending data
 
         ola::DmxBuffer buffer; // A DmxBuffer to hold the data.
