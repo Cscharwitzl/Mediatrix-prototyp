@@ -10,21 +10,6 @@
 using namespace std;
 class DMX {
 
-    int main(int, char *[]){
-        map <int, int> c;        // empty map container
-        
-        // insert elements in random order
-        c.insert(pair <int, int> (1, 40));
-        c.insert(pair <int, int> (2, 30));
-        c.insert(pair <int, int> (3, 60));
-        c.insert(pair <int, int> (4, 20));
-        c.insert(pair <int, int> (5, 50));
-        c.insert(pair <int, int> (6, 50)); 
-        c.insert(pair <int, int> (7, 10));
-
-        sendChannel(c);
-    }
-
     int sendChannel(map<int,int> channels ){
         unsigned int universe = 2; // universe to use for sending data
 
@@ -53,3 +38,18 @@ class DMX {
         
     }
 };
+
+int main(int, char *[]){
+    map <int, int> c;        // empty map container
+    
+    // insert elements in random order
+    c.insert(pair <int, int> (1, 40));
+    c.insert(pair <int, int> (2, 30));
+    c.insert(pair <int, int> (3, 60));
+    c.insert(pair <int, int> (4, 20));
+    c.insert(pair <int, int> (5, 50));
+    c.insert(pair <int, int> (6, 50)); 
+    c.insert(pair <int, int> (7, 10));
+
+    sendChannel(c);
+}
