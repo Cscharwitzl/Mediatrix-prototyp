@@ -14,7 +14,8 @@ class DMX {
         unsigned int universe = 2; // universe to use for sending data
 
         ola::DmxBuffer buffer; // A DmxBuffer to hold the data.
-
+        buffer.Blackout(); // Set all channels to 0
+        
         // Create a new client.
          ola::client::StreamingClient ola_client(
         (ola::client::StreamingClient::Options()));
