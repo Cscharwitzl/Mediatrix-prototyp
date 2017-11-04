@@ -10,7 +10,7 @@
 using namespace std;
 class DMX {
 
-    static int sendChannel(map<int,int> channels ){
+    public static int sendChannel(map<int,int> channels ){
         unsigned int universe = 2; // universe to use for sending data
 
         ola::DmxBuffer buffer; // A DmxBuffer to hold the data.
