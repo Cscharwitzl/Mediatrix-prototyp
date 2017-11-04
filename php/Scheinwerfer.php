@@ -5,7 +5,7 @@ class Scheinwerfer{
     private int channel;
     private int 
 
-    boolean dimmen(int channel){
+    boolean dimmen(){
         
     }
 
@@ -14,7 +14,7 @@ class Scheinwerfer{
     }
 
     boolean off() {
-        
+
     }
 
 }
