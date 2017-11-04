@@ -10,7 +10,7 @@
 using namespace std;
 class DMX {
 
-    int main(){
+    int main(int, char *[]){
         map <int, int> c;        // empty map container
         
         // insert elements in random order
@@ -21,6 +21,8 @@ class DMX {
         c.insert(pair <int, int> (5, 50));
         c.insert(pair <int, int> (6, 50)); 
         c.insert(pair <int, int> (7, 10));
+
+        sendChannel(c);
     }
 
     int sendChannel(map<int,int> channels ){
