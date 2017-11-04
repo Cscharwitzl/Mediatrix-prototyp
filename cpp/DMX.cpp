@@ -12,7 +12,7 @@ class DMX {
 
     public: static int sendChannel(map<int,int> channels ){
         unsigned int universe = 2; // universe to use for sending data
-
+        ola::InitLogging(ola::OLA_LOG_WARN, ola::OLA_LOG_STDERR);
         ola::DmxBuffer buffer; // A DmxBuffer to hold the data.
         buffer.Blackout(); // Set all channels to 0
 
@@ -32,12 +32,12 @@ class DMX {
             
             buffer.SetChannel(x.first, x.second);
         }
-
+        */
         if (!ola_client.SendDmx(universe, buffer)) {
             cout << "Send DMX failed" << endl;
             exit(1);
         }
-        */
+        
     }
 };
 
