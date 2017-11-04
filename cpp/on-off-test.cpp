@@ -7,7 +7,7 @@
 using std::cout;
 using std::endl;
 int main(int, char *[]) {
- unsigned int universe = 2; // universe to use for sending data
+ unsigned int universe = 0; // universe to use for sending data
  // turn on OLA logging
  ola::InitLogging(ola::OLA_LOG_WARN, ola::OLA_LOG_STDERR);
  ola::DmxBuffer buffer; // A DmxBuffer to hold the data.
