@@ -9,6 +9,8 @@
 
 class DMX {
     int sendChannel(channels map<int,int>){
+        unsigned int universe = 2; // universe to use for sending data
+
         ola::DmxBuffer buffer; // A DmxBuffer to hold the data.
 
         // Create a new client.
