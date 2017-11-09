@@ -22,7 +22,7 @@ class DMX : public Php::Base {
     public:
         static void sendChannel(Php::Parameters &params){
 
-            map<int, int> channels = params.channels;
+            int[][] channels = params.channels;
             ola::InitLogging(ola::OLA_LOG_WARN, ola::OLA_LOG_STDERR);
             ola::DmxBuffer buffer; // A DmxBuffer to hold the data.
             buffer.Blackout(); // Set all channels to 0
@@ -126,11 +126,11 @@ extern "C" {
 
         Php::Class<DMX> dmx("DMX");
         dmx.method<&DMX::sendChannel> ("sendChannel", {Php::ByVal("channels", Php::Type::Array)});
-        counter.method<&DMX::blackout> ("blackout");
-        counter.method<&DMX::noBlackout>    ("noBlackout");
+        dmx.method<&DMX::blackout> ("blackout");
+        dmx.method<&DMX::noBlackout>    ("noBlackout");
 
         // add the class to the extension
-        myExtension.add(std::move(counter));
+        extension.add(std::move(counter));
 
         // return the extension
         return extension;
