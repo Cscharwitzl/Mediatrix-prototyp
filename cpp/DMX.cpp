@@ -39,7 +39,7 @@ class DMX : public Php::Base {
             }
 
 
-            for (auto const& x : params.channels)
+            for (auto const& x : params[0])
             {
 
                 buffer.SetChannel(x.key, x.);
