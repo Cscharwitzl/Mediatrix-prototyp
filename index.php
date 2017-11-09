@@ -1,9 +1,9 @@
 <?php
 
-phpinfo();
+//phpinfo();
 
-// $dmx = new DMX();
-//
-// echo "blackout";
-//
-// $dmx::blackout();
+$dmx = new DMX();
+
+echo "blackout";
+
+$dmx::blackout();
