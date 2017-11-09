@@ -83,7 +83,7 @@ class DMX : public Php::Base {
                 c.insert(pair <Php::Value, Php::Value> (i, 255));
             }
 
-            Php::Type::Array erg(c);
+            Php::Type::Array erg = c;
 
             sendChannel(erg);
         }
