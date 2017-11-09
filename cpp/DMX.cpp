@@ -22,7 +22,7 @@ class DMX : public Php::Base {
     public:
         static void sendChannel(Php::Parameters &params){
 
-            map<int, int> channels = params;
+            map<int, int> channels = params.channels;
             ola::InitLogging(ola::OLA_LOG_WARN, ola::OLA_LOG_STDERR);
             ola::DmxBuffer buffer; // A DmxBuffer to hold the data.
             buffer.Blackout(); // Set all channels to 0
@@ -42,7 +42,7 @@ class DMX : public Php::Base {
             for (auto const& x : channels)
             {
 
-                buffer.SetChannel(x.first, x.second);
+                buffer.SetChannel(x.key, x.);
             }
 
             if (!ola_client.SendDmx(UNIVERSE, buffer)) {
@@ -125,7 +125,7 @@ extern "C" {
         static Php::Extension extension("DMX", "1.0");
 
         Php::Class<DMX> dmx("DMX");
-        dmx.method<&DMX::sendChannel> ("sendChannel");
+        dmx.method<&DMX::sendChannel> ("sendChannel", {Php::ByVal("channels", Php::Type::Array)});
         counter.method<&DMX::blackout> ("blackout");
         counter.method<&DMX::noBlackout>    ("noBlackout");
 
