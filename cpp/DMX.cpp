@@ -87,6 +87,7 @@ class DMX : public Php::Base {
 
 };
 
+/*
 int main(int, char *[]){
     map <int, int> c;        // empty map container
 
@@ -106,7 +107,7 @@ int main(int, char *[]){
     DMX::noBlackout();
 }
 
-
+*/
 /**
  *  tell the compiler that the get_module is a pure C function
  */
