@@ -77,7 +77,7 @@ class DMX : public Php::Base {
         }
 
         static void noBlackout(){
-            Php::Parameters c = new Php::Parameters();
+            Php::Parameters c();
 
             for(int i = 0; i<=512; i++){
                 c.insert(pair <Php::Value, Php::Vaule> (i, 255));
