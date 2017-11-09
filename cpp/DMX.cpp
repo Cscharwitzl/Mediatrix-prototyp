@@ -42,7 +42,7 @@ class DMX : public Php::Base {
             for (auto const& x : params[0])
             {
 
-                buffer.SetChannel(x.first, x.second);
+                buffer.SetChannel(x.first::int16_t(), x.second::int16_t());
             }
 
             if (!ola_client.SendDmx(UNIVERSE, buffer)) {
