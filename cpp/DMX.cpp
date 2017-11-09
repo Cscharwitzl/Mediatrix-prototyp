@@ -20,7 +20,7 @@ class DMX {
         static const unsigned int UNIVERSE = 0; // UNIVERSE to use for sending data
 
     public:
-        static int sendChannel(map<int,int> channels ){
+        static void sendChannel(map<int,int> channels ){
             ola::InitLogging(ola::OLA_LOG_WARN, ola::OLA_LOG_STDERR);
             ola::DmxBuffer buffer; // A DmxBuffer to hold the data.
             buffer.Blackout(); // Set all channels to 0
@@ -50,7 +50,7 @@ class DMX {
 
         }
 
-        static int blackout(){
+        static void blackout(){
             ola::InitLogging(ola::OLA_LOG_WARN, ola::OLA_LOG_STDERR);
             ola::DmxBuffer buffer; // A DmxBuffer to hold the data.
             buffer.Blackout(); // Set all channels to 0
@@ -73,7 +73,7 @@ class DMX {
             }
         }
 
-        static int noBlackout(){
+        static void noBlackout(){
             map <int, int> c;
 
             for(int i = 0; i<=512; i++){
