@@ -1,7 +1,7 @@
 <?php
 
 phpinfo();
-
-$dmx = new DMX();
-
-print_r($dmx):
+//
+// $dmx = new DMX();
+//
+// print_r($dmx):
