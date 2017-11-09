@@ -132,7 +132,7 @@ extern "C" {
         Php::Class<DMX> dmx("DMX");
         dmx.method<&DMX::sendChannel> ("sendChannel", {Php::ByVal("channels", Php::Type::Array)});
         dmx.method<&DMX::blackout> ("blackout");
-        dmx.method<&DMX::noBlackout>    ("noBlackout");
+        //dmx.method<&DMX::noBlackout>    ("noBlackout");
 
         // add the class to the extension
         extension.add(std::move(dmx));
