@@ -87,7 +87,7 @@ LINKER				=	g++
 
 COMPILER_FLAGS		=	 -Wall -c -O2 -std=c++11 -fpic -o
 LINKER_FLAGS		=	-shared
-LINKER_DEPENDENCIES	=	-lphpcpp -pthread -I/usr/local/include -L/usr/local/lib -lola -lolacommon -lprotobuf -pthread -lpthread
+LINKER_DEPENDENCIES	=	-lphpcpp $(pkg-config --cflags --libs libola)
 
 
 #
