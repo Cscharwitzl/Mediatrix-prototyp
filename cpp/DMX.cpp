@@ -20,7 +20,9 @@ class DMX : public Php::Base {
         static const unsigned int UNIVERSE = 0; // UNIVERSE to use for sending data
 
     public:
-        static void sendChannel(Php::Parameters &channels){
+        static void sendChannel(Php::Parameters &params){
+
+            map<int, int> channels = params;
             ola::InitLogging(ola::OLA_LOG_WARN, ola::OLA_LOG_STDERR);
             ola::DmxBuffer buffer; // A DmxBuffer to hold the data.
             buffer.Blackout(); // Set all channels to 0
@@ -123,9 +125,9 @@ extern "C" {
         static Php::Extension extension("DMX", "1.0");
 
         Php::Class<DMX> dmx("DMX");
-        dmx.method<&DMX::increment> ("increment");
-        counter.method<&DMX::decrement> ("decrement");
-        counter.method<&DMX::value>     ("value");
+        dmx.method<&DMX::sendChannel> ("sendChannel");
+        counter.method<&DMX::blackout> ("blackout");
+        counter.method<&DMX::noBlackout>    ("noBlackout");
 
         // add the class to the extension
         myExtension.add(std::move(counter));
