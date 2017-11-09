@@ -77,10 +77,10 @@ class DMX : public Php::Base {
         }
 
         static void noBlackout(){
-            Php:Parameters c;
+            Php::Parameters c;
 
             for(int i = 0; i<=512; i++){
-                c.insert(pair <Php:Value, Php::Vaule> (i, 255));
+                c.insert(pair <Php::Value, Php::Vaule> (i, 255));
             }
             sendChannel(c);
         }
