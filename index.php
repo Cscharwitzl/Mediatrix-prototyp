@@ -13,9 +13,9 @@ $dmx::blackout();
 echo "channel";
 
 $dmx::sendChannel(array(
-  1 => 10,
-  2 => 30,
-  3 => 100
+  0 => 10,
+  1 => 30,
+  2 => 100
 ));
 
 echo "finished";
