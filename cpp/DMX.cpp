@@ -14,13 +14,13 @@ using namespace std;
 
 
 
-class DMX {
+class DMX : public Php::Base {
 
     private:
         static const unsigned int UNIVERSE = 0; // UNIVERSE to use for sending data
 
     public:
-        static void sendChannel(map<int,int> channels ){
+        static void sendChannel(Php::Parameters &channels){
             ola::InitLogging(ola::OLA_LOG_WARN, ola::OLA_LOG_STDERR);
             ola::DmxBuffer buffer; // A DmxBuffer to hold the data.
             buffer.Blackout(); // Set all channels to 0
@@ -81,6 +81,7 @@ class DMX {
             }
             sendChannel(c);
         }
+
 };
 
 int main(int, char *[]){
@@ -121,7 +122,13 @@ extern "C" {
         // for the entire duration of the process (that's why it's static)
         static Php::Extension extension("DMX", "1.0");
 
-        // @todo    add your own functions, classes, namespaces to the extension
+        Php::Class<DMX> dmx("DMX");
+        dmx.method<&DMX::increment> ("increment");
+        counter.method<&DMX::decrement> ("decrement");
+        counter.method<&DMX::value>     ("value");
+
+        // add the class to the extension
+        myExtension.add(std::move(counter));
 
         // return the extension
         return extension;
