@@ -42,7 +42,7 @@ class DMX : public Php::Base {
             for (auto const& x : params[0])
             {
                 int c = x.first;
-                int v = x.second
+                int v = x.second;
                 buffer.SetChannel(c, v);
             }
 
