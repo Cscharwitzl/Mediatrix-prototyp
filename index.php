@@ -4,4 +4,4 @@
 
 $dmx = new DMX();
 
-print_r($dmx):
+$dmx::blackout();
