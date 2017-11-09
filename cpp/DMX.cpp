@@ -6,6 +6,7 @@
 #include <iostream>
 
 #include <map>
+#include <array>
 
 
 #include <phpcpp.h>
@@ -22,7 +23,6 @@ class DMX : public Php::Base {
     public:
         static void sendChannel(Php::Parameters &params){
 
-            int[][] channels = params.channels;
             ola::InitLogging(ola::OLA_LOG_WARN, ola::OLA_LOG_STDERR);
             ola::DmxBuffer buffer; // A DmxBuffer to hold the data.
             buffer.Blackout(); // Set all channels to 0
@@ -39,7 +39,7 @@ class DMX : public Php::Base {
             }
 
 
-            for (auto const& x : channels)
+            for (auto const& x : params.channels)
             {
 
                 buffer.SetChannel(x.key, x.);
@@ -130,7 +130,7 @@ extern "C" {
         dmx.method<&DMX::noBlackout>    ("noBlackout");
 
         // add the class to the extension
-        extension.add(std::move(counter));
+        extension.add(std::move(dmx));
 
         // return the extension
         return extension;
