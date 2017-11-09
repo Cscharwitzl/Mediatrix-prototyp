@@ -76,17 +76,17 @@ class DMX : public Php::Base {
             }
         }
 
-        static void noBlackout(){
-            map<Php::Value, Php::Value> c;
-
-            for(int i = 0; i<=512; i++){
-                c.insert(pair <Php::Value, Php::Value> (i, 255));
-            }
-
-            Php::Parameters erg = c;
-
-            sendChannel(erg);
-        }
+        // static void noBlackout(){
+        //     map<Php::Value, Php::Value> c;
+        //
+        //     for(int i = 0; i<=512; i++){
+        //         c.insert(pair <Php::Value, Php::Value> (i, 255));
+        //     }
+        //
+        //     Php::Parameters erg = c;
+        //
+        //     sendChannel(erg);
+        // }
 
 };
 
