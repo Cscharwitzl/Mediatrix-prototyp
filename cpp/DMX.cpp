@@ -13,7 +13,7 @@
 using namespace std;
 
 
-/*
+
 class DMX {
 
     private:
@@ -101,9 +101,6 @@ int main(int, char *[]){
 
     DMX::noBlackout();
 }
-
-
-*/
 
 
 /**
