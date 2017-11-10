@@ -59,7 +59,7 @@
               var val = $( this ).val();
               var id = $(this).attr("data-id");
 
-              data.pusch(["channel": id,  "value": val]);
+              data.pusch({"channel": id,  "value": val});
             });
             console.log("sending request: " + id + ":" + val);
 
