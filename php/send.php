@@ -8,7 +8,8 @@ $value = $_GET["value"];
 $dmx = new DMX();
 
 $dmx::sendChannel(array(
-  $channel => $value,
+  0 => 255,
+  $channel => $value
 ));
 
 echo "finished";
