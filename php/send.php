@@ -12,8 +12,7 @@ print_r($_GET);
 
 
 foreach ($channel as $entry) {
-  print_r($entry["channel"] => $entry["value"]);
-  $erg.push($entry["channel"] => $entry["value"]);
+  $erg[$entry["channel"]] = $entry["value"];
 }
 
 
