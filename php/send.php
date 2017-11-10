@@ -16,6 +16,7 @@ foreach ($channel as $entry) {
   $erg[$entry["channel"]] = $entry["value"];
 }
 
+print_r($erg);
 
 $dmx::sendChannel($erg);
 
