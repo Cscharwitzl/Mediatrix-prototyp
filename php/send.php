@@ -13,7 +13,7 @@ print_r($_GET);
 
 foreach ($channel as $entry) {
   print_r($entry);
-  $erg[(string)$entry["channel"]] = $entry["value"];
+  $erg[$entry["channel"]] = $entry["value"];
 }
 
 
