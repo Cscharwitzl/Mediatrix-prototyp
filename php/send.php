@@ -2,7 +2,7 @@
 
 //phpinfo();
 
-$channel = $_GET[0];
+$channel = $_GET["data"];
 
 $dmx = new DMX();
 
