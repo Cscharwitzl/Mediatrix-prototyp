@@ -16,8 +16,6 @@ foreach ($channel as $entry) {
 }
 
 
-$dmx::sendChannel(array(
-  1 => 2
-));
+$dmx::sendChannel($erg);
 
 echo "finished";
