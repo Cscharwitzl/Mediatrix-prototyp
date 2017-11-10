@@ -8,7 +8,7 @@ $dmx = new DMX();
 
 $erg = array(0 => 255);
 
-print_r($channel);
+print_r($_GET);
 
 
 foreach ($channel as $entry) {
