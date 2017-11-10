@@ -2,24 +2,23 @@
 
 //phpinfo();
 
-$channel = $_GET["channel"];
-$value = $_GET["value"];
+$channel = $_GET[0];
 
 $dmx = new DMX();
 
-$erg = array();
+$erg = array(0 => 255);
 
 print_r($channel);
 
-/*
+
 foreach ($channel as $entry) {
-  print_r(array($entry["channel"] => $entry["value"]));
-  $erg.push(array($entry["channel"] => $entry["value"]));
+  print_r($entry["channel"] => $entry["value"]);
+  $erg.push($entry["channel"] => $entry["value"]);
 }
-*/
+
 
 $dmx::sendChannel(array(
-  0 => 255,
+
   $channel => $value
 ));
 
