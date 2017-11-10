@@ -9,6 +9,8 @@ $dmx = new DMX();
 
 $erg = array();
 
+print_r($channel);
+
 foreach ($channel as $entry) {
   print_r(array($entry["channel"] => $entry["value"]));
   $erg.push(array($entry["channel"] => $entry["value"]));
