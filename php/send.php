@@ -2,20 +2,13 @@
 
 //phpinfo();
 
-echo "create DMX";
+$channel = $GET["channel"];
+$value = $GET["value"];
 
 $dmx = new DMX();
 
-echo "blackout";
-
-$dmx::blackout();
-
-echo "channel";
-
 $dmx::sendChannel(array(
-  0 => 10,
-  1 => 30,
-  2 => 100
+  $channel => $value,
 ));
 
 echo "finished";
