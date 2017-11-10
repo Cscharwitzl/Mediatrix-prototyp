@@ -25,8 +25,7 @@ class DMX : public Php::Base {
 
             ola::InitLogging(ola::OLA_LOG_WARN, ola::OLA_LOG_STDERR);
             ola::DmxBuffer buffer; // A DmxBuffer to hold the data.
-            buffer.Blackout(); // Set all channels to 0
-
+            
 
             // Create a new client.
             ola::client::StreamingClient ola_client(
