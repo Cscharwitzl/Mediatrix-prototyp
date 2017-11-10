@@ -2,8 +2,8 @@
 
 //phpinfo();
 
-$channel = $GET["channel"];
-$value = $GET["value"];
+$channel = $_GET["channel"];
+$value = $_GET["value"];
 
 $dmx = new DMX();
 
