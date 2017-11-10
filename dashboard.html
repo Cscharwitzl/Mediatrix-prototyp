@@ -52,14 +52,20 @@
         <script src="js/main.js"></script>
         <script>
           $(".slider").change(function(){
-            var val = $( this ).val();
-            var id = $(this).attr("data-id");
 
+            var data = [];
+
+            $("slider").each(function(){
+              var val = $( this ).val();
+              var id = $(this).attr("data-id");
+
+              data.pusch(["channel": id,  "value": val]);
+            });
             console.log("sending request: " + id + ":" + val);
 
             $.ajax({
               url: "php/send.php",
-              data: {"channel" : id, "value" : val},
+              data: {data},
               success: function(result){
                 console.log("success");
               },
