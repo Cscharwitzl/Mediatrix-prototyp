@@ -25,7 +25,7 @@ class DMX : public Php::Base {
 
             ola::InitLogging(ola::OLA_LOG_WARN, ola::OLA_LOG_STDERR);
             ola::DmxBuffer buffer; // A DmxBuffer to hold the data.
-            
+
 
             // Create a new client.
             ola::client::StreamingClient ola_client(
@@ -49,6 +49,8 @@ class DMX : public Php::Base {
                 cout << "Send DMX failed" << endl;
                 exit(1);
             }
+
+            cout << "DMX-Singal sent" << endl;
 
         }
 
