@@ -55,13 +55,13 @@
 
             var data = [];
 
-            $("slider").each(function(){
+            $(".slider").each(function(){
               var val = $( this ).val();
               var id = $(this).attr("data-id");
 
-              data.pusch({"channel": id,  "value": val});
+              data.push({"channel": id,  "value": val});
             });
-            console.log("sending request: " + data);
+            console.log(data);
 
             $.ajax({
               url: "php/send.php",
