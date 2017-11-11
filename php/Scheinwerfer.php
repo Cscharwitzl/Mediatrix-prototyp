@@ -2,11 +2,11 @@
 
 class Scheinwerfer{
 
-    private int channel;
-    private int 
+    private int[] channel;
+    private int
 
     boolean dimmen(){
-        
+
     }
 
     boolean on(){
