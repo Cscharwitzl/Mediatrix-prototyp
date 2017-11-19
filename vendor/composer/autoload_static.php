@@ -36,6 +36,10 @@ class ComposerStaticInit9538258ee08a15f034b80fe51bc6f97c
         array (
             'Psr\\Http\\Message\\' => 17,
         ),
+        'M' => 
+        array (
+            'Mediatrix\\' => 10,
+        ),
         'G' => 
         array (
             'GuzzleHttp\\Psr7\\' => 16,
@@ -94,6 +98,10 @@ class ComposerStaticInit9538258ee08a15f034b80fe51bc6f97c
         'Psr\\Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
+        'Mediatrix\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/php',
         ),
         'GuzzleHttp\\Psr7\\' => 
         array (
