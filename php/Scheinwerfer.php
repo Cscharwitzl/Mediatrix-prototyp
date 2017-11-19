@@ -14,7 +14,7 @@ class Scheinwerfer{
 
     function dimmen(int $val): boolean{
       DMX::sendChannel(array(
-        $channel["hue"] => $val
+          $channel["hue"] => $val
       ));
     }
 

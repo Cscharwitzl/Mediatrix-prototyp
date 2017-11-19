@@ -1,6 +1,13 @@
 <?php
-declare(strict_types=1);
 
-namespace Mediatrix;
+use Ratchet\Server\IoServer;
+use Mediatrix\Application;
 
-require __DIR__ . '/../vendor/autoload.php';
+  require __DIR__ . '/../vendor/autoload.php';
+
+  $server = IoServer::factory(
+        new Application(),
+        8080
+  );
+
+  $server->run();
