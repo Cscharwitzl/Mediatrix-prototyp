@@ -11,36 +11,38 @@ namespace Mediatrix;
 use Ratchet\MessageComponentInterface;
 use Ratchet\ConnectionInterface;
 
+
 class Application implements  MessageComponentInterface {
-    protected $clients;
+    protected $client;
+    protected $scheinwerfer;
 
     public function __construct() {
-        $this->clients = new \SplObjectStorage;
+        $this->scheinwerfer = new Scheinwerfer();
     }
 
     public function onOpen(ConnectionInterface $conn) {
         // Store the new connection to send messages to later
-        $this->clients->attach($conn);
+        if(!isset($this->client)) {
+            $this->client = $conn;
 
-        echo "New connection! ({$conn->resourceId})\n";
+            echo "New connection! ({$conn->resourceId})\n";
+        }else{
+            $conn->send("Already a connection");
+            $conn->close();
+
+            echo "Connection denied! ({$conn->resourceId})\n";
+        }
     }
 
     public function onMessage(ConnectionInterface $from, $msg) {
-        $numRecv = count($this->clients) - 1;
-        echo sprintf('Connection %d sending message "%s" to %d other connection%s' . "\n"
-            , $from->resourceId, $msg, $numRecv, $numRecv == 1 ? '' : 's');
+        echo "Message from ". $from->resourceId .": ".$msg;
 
-        foreach ($this->clients as $client) {
-            if ($from !== $client) {
-                // The sender is not the receiver, send to each client connected
-                $client->send($msg);
-            }
-        }
+        $this->client->send("got: ".$msg);
     }
 
     public function onClose(ConnectionInterface $conn) {
         // The connection is closed, remove it, as we can no longer send it messages
-        $this->clients->detach($conn);
+        $this->client = null;
 
         echo "Connection {$conn->resourceId} has disconnected\n";
     }

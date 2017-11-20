@@ -6,32 +6,32 @@ namespace Mediatrix;
 
 class Scheinwerfer{
 
-    private $channel = array();
+    private $channels = array();
 
     function __constructor(array $channels){
-      $channel = $channels;
+      $this->channels = $channels;
     }
 
     function dimmen(int $val): boolean{
       DMX::sendChannel(array(
-          $channel["hue"] => $val
+          $this->channels["hue"] => $val
       ));
     }
 
     function on(): boolean{
       DMX::sendChannel(array(
-        $channel["hue"] => 255
+        $this->channels["hue"] => 255
       ));
     }
 
     function off(): boolean {
       DMX::sendChannel(array(
-        $channel["hue"] => 0
+        $this->channels["hue"] => 0
       ));
     }
 
-    function setChannels(): void{
-
+    function setChannels($channels): void{
+        $this->channels = $channels;
     }
 
 }
