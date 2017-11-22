@@ -15,9 +15,13 @@ use Ratchet\ConnectionInterface;
 class Application implements  MessageComponentInterface {
     protected $client;
     protected $scheinwerfer;
+    protected $ini;
 
     public function __construct() {
+
         $this->scheinwerfer = new Scheinwerfer();
+
+        $this->ini = new Ini($this);
     }
 
     public function onOpen(ConnectionInterface $conn) {

@@ -9,7 +9,7 @@ class Scheinwerfer{
     private $channels = array();
 
     function __constructor(array $channels){
-      $this->channels = $channels;
+        $this->channels = $channels;
     }
 
     function dimmen(int $val): boolean{
@@ -29,9 +29,4 @@ class Scheinwerfer{
         $this->channels["hue"] => 0
       ));
     }
-
-    function setChannels($channels): void{
-        $this->channels = $channels;
-    }
-
 }
