@@ -36,12 +36,12 @@ class Application implements  MessageComponentInterface {
     }
 
     public function onMessage(ConnectionInterface $from, $msg) {
-        echo "Got Massage: ".$msg." from: ".$from->resourceId."\n";
+        echo "Got Massage: {$msg} from: {$from->resourceId}\n";
 
         $commands = json_decode($msg, true);
 
         if(isset($commands["dmx"])){
-            $from->send("DMX");
+            $this->sendDmx($commands["dmx"]);
         }elseif (isset($commands["beamer"])){
             $from->send("beamer");
         }elseif (isset($commands["av"])){
@@ -74,6 +74,16 @@ class Application implements  MessageComponentInterface {
         $this->scheinwerfer = $scheinwerfer;
     }
 
+    /**
+     * @param array $dmx
+     */
+    private function sendDmx(array $dmx)
+    {
+        foreach($dmx as $dev){
+            echo "sendDmx: ".print_r($dev);
+            //$this->scheinwerfer[$dev["id"]]->dimmen($dev["hue"]);
+        }
+    }
 
 
 }

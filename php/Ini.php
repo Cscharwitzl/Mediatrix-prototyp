@@ -49,7 +49,7 @@ class Ini
 
             $app->setScheinwerfer($scheinwerfer);
 
-            print_r($scheinwerfer);
+            //print_r($scheinwerfer);
 
         }catch (Exception $ex){
             echo $ex->getMessage();

@@ -14,14 +14,19 @@ WS command structure (JSON):
 {
 "dmx":
   {
-  "scheinwerfer1":255,
+  "scheinwerfer1":
+  {
+    "id": 1,
+    "hue": 255
+  }
   "scheinwerfer2":
   {
+    "id": 2,
     "rot":2,
     "gruen":255,
     "blau":100,
     "weis":255,
-    "brightness":10
+    "hue":10
   },
   "blackout":1,
   "noblackout":1      
