@@ -18,9 +18,6 @@ class Application implements  MessageComponentInterface {
     protected $ini;
 
     public function __construct() {
-
-        $this->scheinwerfer = new Scheinwerfer();
-
         $this->ini = new Ini($this);
     }
 
@@ -39,9 +36,21 @@ class Application implements  MessageComponentInterface {
     }
 
     public function onMessage(ConnectionInterface $from, $msg) {
-        echo "Message from ". $from->resourceId .": ".$msg;
+        echo "Got Massage: ".$msg." from: ".$from->resourceId."\n";
 
-        $this->client->send("got: ".$msg);
+        $commands = json_decode($msg, true);
+
+        if(isset($commands["dmx"])){
+            $from->send("DMX");
+        }elseif (isset($commands["beamer"])){
+            $from->send("beamer");
+        }elseif (isset($commands["av"])){
+            $from->send("av");
+        }else{
+            $from->send("Unrecognized Command");
+        }
+
+
     }
 
     public function onClose(ConnectionInterface $conn) {
@@ -56,4 +65,15 @@ class Application implements  MessageComponentInterface {
 
         $conn->close();
     }
+
+    /**
+     * @param array $scheinwerfer
+     */
+    public function setScheinwerfer(array $scheinwerfer)
+    {
+        $this->scheinwerfer = $scheinwerfer;
+    }
+
+
+
 }

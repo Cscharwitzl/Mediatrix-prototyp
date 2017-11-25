@@ -8,9 +8,11 @@ use Ratchet\WebSocket\WsServer;
 require __DIR__ . '/../vendor/autoload.php';
 
   $server = IoServer::factory(
-
-      new Application()
-      ,
+      new HttpServer(
+          new WsServer(
+              new Application()
+          )
+      ),
         10000
   );
 
