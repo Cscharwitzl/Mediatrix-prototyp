@@ -81,7 +81,7 @@ class Application implements  MessageComponentInterface {
     {
         foreach($dmx as $dev){
             echo "sendDmx: ".print_r($dev);
-            //$this->scheinwerfer[$dev["id"]]->dimmen($dev["hue"]);
+            $this->scheinwerfer[$dev["id"]]->dimmen($dev["hue"]);
         }
     }
 
