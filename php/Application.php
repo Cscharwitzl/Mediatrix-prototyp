@@ -80,7 +80,7 @@ class Application implements  MessageComponentInterface {
     private function sendDmx(array $dmx)
     {
         foreach($dmx as $dev){
-            echo "sendDmx: ".print_r($dev);
+            echo "sendDmx: ".(json_encode($dev));
             $this->scheinwerfer[$dev["id"]]->dimmen($dev["hue"]);
         }
     }
