@@ -23,7 +23,7 @@ class DMX : public Php::Base {
     public:
         static void sendChannel(Php::Parameters &params){
 
-            ola::InitLogging(ola::OLA_LOG_WARN, ola::OLA_LOG_STDERR, ola::OLA_LOG_INFO);
+            ola::InitLogging(ola::OLA_LOG_WARN, ola::OLA_LOG_STDERR);
             ola::DmxBuffer buffer; // A DmxBuffer to hold the data.
 
 

@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e6c423d2-4f6b-4945-adc4-e91ff282cac8" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/php/Scheinwerfer.php" afterPath="$PROJECT_DIR$/php/Scheinwerfer.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cpp/DMX.cpp" afterPath="$PROJECT_DIR$/cpp/DMX.cpp" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -18,11 +18,41 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Scheinwerfer.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Scheinwerfer.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/php/Scheinwerfer.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="221">
               <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Makefile" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cpp/Makefile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="88" column="31" lean-forward="true" selection-start-line="88" selection-start-column="31" selection-end-line="88" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DMX.cpp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/cpp/DMX.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="25" column="67" lean-forward="false" selection-start-line="25" selection-start-column="67" selection-end-line="25" selection-end-column="67" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DMX.cpp.origin" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/cpp/DMX.cpp.origin">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="17" column="67" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -56,16 +86,6 @@
               <folding>
                 <element signature="e#7#35#0#PHP" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="composer.json" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/composer.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -105,26 +125,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Ini.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/php/Ini.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="1" column="0" lean-forward="false" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/cpp/example/main.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="12" lean-forward="false" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="12" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -149,6 +149,7 @@
         <option value="$PROJECT_DIR$/test_js/ws_test.html" />
         <option value="$PROJECT_DIR$/php/websocket.php" />
         <option value="$PROJECT_DIR$/php/Scheinwerfer.php" />
+        <option value="$PROJECT_DIR$/cpp/DMX.cpp" />
       </list>
     </option>
   </component>
@@ -204,6 +205,11 @@
             <path>
               <item name="Mediatrix-prototyp" type="b2602c69:ProjectViewProjectNode" />
               <item name="Mediatrix-prototyp" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="Mediatrix-prototyp" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Mediatrix-prototyp" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="cpp" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="Mediatrix-prototyp" type="b2602c69:ProjectViewProjectNode" />
@@ -269,7 +275,7 @@
       <workItem from="1511102714720" duration="7987000" />
       <workItem from="1511171269812" duration="13221000" />
       <workItem from="1511610262854" duration="7006000" />
-      <workItem from="1511692642071" duration="670000" />
+      <workItem from="1511692642071" duration="975000" />
     </task>
     <task id="LOCAL-00001" summary="php Application">
       <created>1511123342380</created>
@@ -327,11 +333,18 @@
       <option name="project" value="LOCAL" />
       <updated>1511692815615</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="fix DMX bug">
+      <created>1511693332413</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1511693332413</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="28884000" />
+    <option name="totallyTimeSpent" value="29189000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -380,7 +393,8 @@
     <MESSAGE value="Programm DMX command" />
     <MESSAGE value="DMX finished with websocket" />
     <MESSAGE value="change ip settings for server" />
-    <option name="LAST_COMMIT_MESSAGE" value="change ip settings for server" />
+    <MESSAGE value="fix DMX bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix DMX bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -664,6 +678,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="221">
           <caret line="19" column="9" lean-forward="true" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cpp/Makefile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="88" column="31" lean-forward="true" selection-start-line="88" selection-start-column="31" selection-end-line="88" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cpp/DMX.cpp.origin">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="67" lean-forward="true" selection-start-line="17" selection-start-column="29" selection-end-line="17" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/cpp/DMX.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="25" column="67" lean-forward="false" selection-start-line="25" selection-start-column="67" selection-end-line="25" selection-end-column="67" />
           <folding />
         </state>
       </provider>
